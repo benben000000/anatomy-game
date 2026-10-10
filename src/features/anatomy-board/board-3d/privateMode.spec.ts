@@ -6,8 +6,8 @@ import {
   privateThreeDBlockedMessage,
   readRuntimeSwitch,
   resolvePrivateThreeD,
+  runtimeSwitchRelevant,
   writeRuntimeSwitch,
-  type PrivateThreeDState,
 } from './privateMode';
 import { modelPackManifest } from './threeDMappings';
 
@@ -44,9 +44,11 @@ describe('resolvePrivateThreeD', () => {
     expect(state).toEqual({ allowed: false, reason: 'build-flag-off' });
   });
 
-  it('refuses when the runtime switch is off', () => {
-    const state = resolvePrivateThreeD({ ...ALL_ON, runtimeEnabled: false });
-    expect(state).toEqual({ allowed: false, reason: 'runtime-switch-off' });
+  it('allows when the runtime switch is off and the build flag and packs are usable', () => {
+    // The runtime switch is now an escape hatch, not a startup gate. The only
+    // gate left for a private build with usable packs is the build flag and
+    // pack usability, both of which are satisfied here.
+    expect(resolvePrivateThreeD({ buildFlag: true, runtimeEnabled: false, allPacksLicenceVerified: true })).toEqual({ allowed: true });
   });
 
   it('refuses when the licence is unverified, even with everything else on', () => {
@@ -70,17 +72,28 @@ describe('blocked messages', () => {
     expect(message.detail).toMatch(/not a problem with/i);
   });
 
+describe('blocked messages', () => {
+  it('explains a licence block without blaming the device or connection', () => {
+    const message = privateThreeDBlockedMessage('licence-unverified');
+    expect(message.headline).toMatch(/licen[cs]e/i);
+    // It must not send the user off to check their connection, and it must not
+    // imply the block is device-specific.
+    expect(message.detail).not.toMatch(/connect to the internet/i);
+    expect(message.detail).not.toMatch(/try another browser/i);
+    // The copy positively states the block is NOT about the device or network.
+    expect(message.detail).toMatch(/not a problem with/i);
+  });
+
   it('never describes the model as public domain or open source', () => {
-    for (const reason of ['build-flag-off', 'runtime-switch-off', 'licence-unverified'] as const) {
-      const text = `${privateThreeDBlockedMessage(reason).headline} ${privateThreeDBlockedMessage(reason).detail}`;
+    // Only the messages this build still produces are looped, so no reason here
+    // can throw when read.
+    for (const reason of ['build-flag-off', 'licence-unverified'] as const) {
+      const message = privateThreeDBlockedMessage(reason);
+      const text = `${message.headline} ${message.detail}`;
       expect(text.toLowerCase()).not.toContain('public domain');
       expect(text.toLowerCase()).not.toMatch(/\bopen source\b/);
       expect(text.toLowerCase()).not.toContain('cleared');
     }
-  });
-
-  it('tells the owner where the switch is', () => {
-    expect(privateThreeDBlockedMessage('runtime-switch-off').detail).toMatch(/settings/i);
   });
 });
 
@@ -172,13 +185,28 @@ describe('the shipped pack manifest', () => {
   });
 });
 
-describe('state shape', () => {
-  it('never reports a reason when allowed', () => {
-    const state: PrivateThreeDState = resolvePrivateThreeD(ALL_ON);
-    if (state.allowed) {
-      expect('reason' in state).toBe(false);
-    } else {
-      expect(typeof state.reason).toBe('string');
-    }
+// ---- private 3D now defaults ON for this build (escape hatch in Settings) ----
+
+describe('runtimeSwitchRelevant', () => {
+  it('is true when the build flag and pack usability are both satisfied', () => {
+    expect(runtimeSwitchRelevant({ buildFlag: true, allPacksLicenceVerified: true })).toBe(true);
   });
+
+  it('is false when the build flag is off', () => {
+    expect(runtimeSwitchRelevant({ buildFlag: false, allPacksLicenceVerified: true })).toBe(false);
+  });
+
+  it('is false when the packs are not usable', () => {
+    expect(runtimeSwitchRelevant({ buildFlag: true, allPacksLicenceVerified: false })).toBe(false);
+  });
+
+  it('makes the stored runtime switch irrelevant in a build that cannot load 3D', () => {
+    // When runtimeSwitchRelevant is false, this project never reads a stored
+    // 'enabled' value as permission to load 3D — behaviour is covered by the
+    // resolvePrivateThreeD contract and by the ThreeDExploreView smoke test.
+    expect(runtimeSwitchRelevant({ buildFlag: false, allPacksLicenceVerified: false })).toBe(false);
+    expect(runtimeSwitchRelevant({ buildFlag: true, allPacksLicenceVerified: true })).toBe(true);
+  });
+});
+
 });

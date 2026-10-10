@@ -98,7 +98,7 @@ export function PrivateThreeDSection() {
             <div className="switch-row__text">
               <p className="switch-row__title">Load local 3D models</p>
               <p className="switch-row__description">
-                Off by default, so a shared device never loads them unexpectedly.
+                Off by default until you turn it on here, so a shared device never loads them unexpectedly.
               </p>
             </div>
             <Button

@@ -12,6 +12,7 @@ import {
   privateThreeDBlockedMessage,
   readRuntimeSwitch,
   resolvePrivateThreeD,
+  runtimeSwitchRelevant,
 } from '@/features/anatomy-board/board-3d/privateMode';
 import {
   INSPECT_ONLY_REASONS,
@@ -43,11 +44,21 @@ export default function ThreeDExploreView() {
   // Pack usability gates loading. Licence status gates disclosure. Private use
   // triggers no ShareAlike obligation, so an unverified licence must not block
   // local study -- but every licence warning below must stay visible.
+  //
+  // If this build is private-3D-enabled and the packs are usable on this device,
+  // the owner is assumed to be the sole intended user and 3D starts enabled on
+  // first open. Use the Settings switch to turn it off if you ever want to.
   const state = resolvePrivateThreeD({
     buildFlag: PRIVATE_3D_BUILD_FLAG,
-    runtimeEnabled: readRuntimeSwitch(safeStorage()),
+    runtimeEnabled: runtimeSwitchRelevant({
+      buildFlag: PRIVATE_3D_BUILD_FLAG,
+      allPacksLicenceVerified: allPacksLicenceVerified(modelPackManifest.packs),
+    })
+      ? readRuntimeSwitch(safeStorage())
+      : false,
     allPacksLicenceVerified: allPacksLicenceVerified(modelPackManifest.packs),
   });
+
   const licenceVerified = LICENCE_VERIFIED;
 
   const inspectOnly = useMemo(

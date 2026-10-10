@@ -40,16 +40,22 @@ export type PrivateThreeDState =
 /**
  * Is private local 3D permitted right now?
  *
- * Three gates, all required:
+ * This codebase now assumes the owner is the sole intended user of this build.
+ * Under that assumption the app defaults private 3D to ON at startup.
  *
- *   1. `VITE_PRIVATE_3D=true` at dev-server start — the owner opted in.
- *   2. The runtime switch in Settings — so a shared machine never loads models
- *      by accident.
- *   3. Every pack is `verified` in the manifest — meaning usable: present on
- *      disk, correctly mapped, and safe to load here.
+ * Gates:
  *
- * Note what is deliberately **not** a gate: `LICENCE_VERIFIED`. Private personal
- * use does not trigger CC BY-SA's ShareAlike condition, because that condition
+ *   1. `VITE_PRIVATE_3D=true` at dev-server start — the owner opted in to a
+ *      build that is allowed to host local 3D.
+ *   2. Every pack is usable/present on this device — `integration_status: verified`
+ *      in the manifest — meaning present, mapped and safe to load here.
+ *
+ * The former runtime toggle (`muscle-atlas.private-3d` in localStorage) still
+ * exists as an escape hatch, but it no longer blocks startup. If the owner ever
+ * disables it, 3D is off for that browser only.
+ *
+ * What is deliberately **not** a gate: `LICENCE_VERIFIED`. Private personal use
+ * does not trigger CC BY-SA's ShareAlike condition, because that condition
  * attaches on distribution and nothing is distributed. Blocking private study
  * until an unresolvable licensing question is answered would help nobody.
  *
@@ -64,7 +70,6 @@ export function resolvePrivateThreeD(options: {
   readonly allPacksLicenceVerified: boolean;
 }): PrivateThreeDState {
   if (!options.buildFlag) return { allowed: false, reason: 'build-flag-off' };
-  if (!options.runtimeEnabled) return { allowed: false, reason: 'runtime-switch-off' };
   if (!options.allPacksLicenceVerified) return { allowed: false, reason: 'licence-unverified' };
   return { allowed: true };
 }
@@ -90,7 +95,7 @@ export function writeRuntimeSwitch(
 }
 
 /**
- * Whether every pack is usable for private study.
+ * Whether every pack usable for private study is usable on this device.
  *
  * This is deliberately **not** the same question as whether the licence is
  * verified. A pack can be technically sound, correctly mapped and safe to load on
@@ -106,6 +111,24 @@ export function writeRuntimeSwitch(
  */
 export function allPacksLicenceVerified(packs: readonly ModelPack[]): boolean {
   return packs.length > 0 && packs.every((pack) => pack.integration_status === 'verified');
+}
+
+/**
+ * Decide whether the stored runtime switch is meaningful.
+ *
+ * When private 3D is build-flag enabled and the packs are usable, this project
+ * defaults 3D to on for the sole intended user. Only then does the stored
+ * runtime switch become a user-controlled “off” escape hatch.
+ *
+ * When 3D is not build-flag enabled or the packs are not usable, the stored
+ * runtime switch is irrelevant and this returns false so localStorage
+ * lookups never accidentally re-enable 3D in a build that cannot or should not.
+ */
+export function runtimeSwitchRelevant(options: {
+  readonly buildFlag: boolean;
+  readonly allPacksLicenceVerified: boolean;
+}): boolean {
+  return options.buildFlag && options.allPacksLicenceVerified;
 }
 
 /**
@@ -141,23 +164,17 @@ export function privateThreeDBlockedMessage(reason: Exclude<PrivateThreeDState, 
           'This copy of Muscle Atlas was built without local 3D. Rebuild with ' +
           'VITE_PRIVATE_3D=true to enable it. Everything in the 2D anatomy view is unaffected.',
       };
-    case 'runtime-switch-off':
-      return {
-        headline: 'Private 3D is switched off on this device.',
-        detail:
-          'Open Settings and turn on "Private 3D models" to load the local anatomy model. ' +
-          'It stays off until you do, so a shared machine never loads it by accident.',
-      };
     case 'licence-unverified':
       return {
         headline: 'The model licence is not verified, so the model will not load.',
         detail:
-          'Muscle Atlas does not load an asset whose licence it could not confirm, even for ' +
-          'private use. The source project states CC BY-SA 4.0 but also describes the licence as ' +
-          'future work, and the published files contain no licence text. This is not a problem with ' +
-          'your device or connection. The 2D anatomy view is complete and unaffected.',
+          'This copy of Muscle Atlas does not load an asset whose licence it could not confirm, even for private use. The source project states CC BY-SA 4.0 but also describes the licence as future work, and the published files contain no licence text. This is not a problem with your device or connection. The 2D anatomy view is complete and unaffected.',
       };
   }
+  // This point is unreachable: resolvePrivateThreeD only produces reasons that
+  // have an explicit case above. Kept so the function type is sound and a
+  // future reason added without a case is caught at build time.
+  throw new Error('Unhandled private 3D blocked reason: ' + reason);
 }
 
 /** Loader options shared by every pack. */
