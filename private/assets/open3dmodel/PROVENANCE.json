@@ -79,7 +79,7 @@
         "geometry_modified": false,
         "geometry_re_encoded": false,
         "textures_modified": "removed entirely",
-        "built_at": "2026-10-09T20:13:21.983Z",
+        "built_at": "2026-10-10T01:36:50.844Z",
         "script": "scripts/build-3d-derivatives.ts"
       },
       {
@@ -112,7 +112,7 @@
         "geometry_modified": false,
         "geometry_re_encoded": false,
         "textures_modified": "removed entirely",
-        "built_at": "2026-10-09T20:13:21.995Z",
+        "built_at": "2026-10-10T01:36:50.856Z",
         "script": "scripts/build-3d-derivatives.ts"
       }
     ]
