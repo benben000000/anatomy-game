@@ -1,0 +1,18 @@
+{
+  "$schema": "./anatomy-system.schema.json",
+  "content_version": "1.0.0",
+  "systems": [
+    {
+      "system_id": "muscular",
+      "display_name": "Muscular system",
+      "description": "Superficial skeletal muscles visible in neutral anterior and posterior body views. Simplified teaching figures, not a complete or clinically oriented reference.",
+      "status": "authoring",
+      "supported_learning_modes": ["explore", "identify", "learn_then_test", "review"],
+      "default_views": ["anterior", "posterior"],
+      "content_version": "1.0.0",
+      "renderer_baseline": "svg_2d",
+      "accelerated_renderer": null,
+      "acceleration_is_optional": true
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+/**
+ * Anatomy board presentation.
+ *
+ * Visual state is expressed entirely through `data-visual-state` and rendered
+ * here in CSS. Nothing writes inline styles to a muscle, and no colour ever
+ * carries meaning on its own: each state pairs a hue with a distinct stroke
+ * weight and dash pattern, and is also stated in words in the feedback panel.
+ *
+ * No filters, no blurred highlights, no animated shadows. Panning and zooming
+ * change one transform attribute.
+ */
+
+.board [data-layer='base'] .body__head,
+.board [data-layer='base'] .body__neck,
+.board [data-layer='base'] .body__torso,
+.board [data-layer='base'] .body__pelvis,
+.board [data-layer='base'] .body__limb,
+.board [data-layer='base'] .body__foot {
+  fill: var(--color-body-fill);
+  stroke: var(--color-body-edge);
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+}
+
+[data-layer='muscle'] .muscle__fill {
+  fill: var(--color-muscle-fill);
+  transition: fill var(--motion-micro) var(--easing-standard);
+}
+
+[data-layer='muscle'] .muscle__edge {
+  fill: none;
+  stroke: var(--color-muscle-edge);
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+  transition:
+    stroke var(--motion-micro) var(--easing-standard),
+    stroke-width var(--motion-micro) var(--easing-standard);
+}
+
+/* ------------------------------------------------------------------ *
+ * States. Each is distinguishable without colour.
+ * ------------------------------------------------------------------ */
+
+[data-visual-state='selected'] .muscle__fill {
+  fill: var(--color-state-selected-soft);
+}
+[data-visual-state='selected'] .muscle__edge {
+  stroke: var(--color-state-selected);
+  stroke-width: 3;
+}
+
+[data-visual-state='pressed'] .muscle__fill {
+  fill: var(--color-accent-soft);
+}
+
+[data-visual-state='hover'] .muscle__edge {
+  stroke-width: 2.5;
+}
+
+[data-visual-state='correct'] .muscle__fill {
+  fill: var(--color-state-correct);
+}
+[data-visual-state='correct'] .muscle__edge {
+  stroke: var(--color-state-correct);
+  stroke-width: 4;
+}
+
+[data-visual-state='incorrect'] .muscle__fill {
+  fill: var(--color-state-incorrect);
+}
+[data-visual-state='incorrect'] .muscle__edge {
+  stroke: var(--color-state-incorrect);
+  stroke-width: 4;
+  /* Dashed: a shape cue that survives greyscale and colour-blindness. */
+  stroke-dasharray: 10 6;
+}
+
+[data-visual-state='revealed'] .muscle__fill {
+  fill: var(--color-state-revealed);
+}
+[data-visual-state='revealed'] .muscle__edge {
+  stroke: var(--color-state-revealed);
+  stroke-width: 4;
+  stroke-dasharray: 2 5;
+}
+
+[data-visual-state='assisted'] .muscle__fill {
+  fill: var(--color-state-assisted);
+}
+[data-visual-state='assisted'] .muscle__edge {
+  stroke: var(--color-state-assisted);
+  stroke-width: 2;
+}
+
+[data-visual-state='dimmed'] .muscle__fill {
+  opacity: 0.3;
+}
+[data-visual-state='dimmed'] .muscle__edge {
+  opacity: 0.3;
+}
+
+[data-visual-state='hidden'] {
+  display: none;
+}
+
+[data-reduced-motion='true'] [data-layer='muscle'] .muscle__fill,
+[data-reduced-motion='true'] [data-layer='muscle'] .muscle__edge {
+  transition: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-layer='muscle'] .muscle__fill,
+  [data-layer='muscle'] .muscle__edge {
+    transition: none;
+  }
+}
+
+/* Debug overlay, development builds only. */
+[data-layer='debug'] text {
+  font-family: var(--font-mono);
+  pointer-events: none;
+}

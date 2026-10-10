@@ -1,0 +1,94 @@
+{
+  "//": "Private local runtime manifest. Packs are served from private/assets/open3dmodel/derived/ by a dev-server plugin and are NEVER copied into a build.",
+
+  "content_version": "2.0.0",
+  "source_project": "Open 3D Anatomical Model for Education ('Open3Dmodel'), AnatomyTOOL",
+  "source_project_url": "https://anatomytool.org/open3dmodel",
+  "source_licence_stated": "CC BY-SA 4.0 (NOT VERIFIED - see assets-source/open3dmodel/metadata/original-source-record.json)",
+  "usage": "private local use only. not for redistribution.",
+  "licence_verified": false,
+  "licence_note": "The source project describes the licence in the future tense and the published archives contain no licence text. Private personal use does not trigger CC BY-SA's ShareAlike condition, because that condition attaches on distribution and nothing is distributed. That makes private use low-risk; it does not make the licence verified, and it is not recorded as verified here.",
+
+  "packs": [
+    {
+      "model_pack_id": "open3dmodel.upper_limb.v1",
+      "display_name": "Open3Dmodel — upper limb muscles",
+      "asset_path": "/private-models/upper-limb-muscles.glb",
+      "size_bytes": 94664,
+      "approx_triangles": 17460,
+      "mesh_count": 10,
+      "requires_draco": true,
+      "integration_status": "verified",
+      "blocking_reason": null,
+      "derived_from": "upper-limb.glb",
+      "original_sha256": "E440C84C794239D1850E62B4EDE0195D81BCFF4F0078C7945528C388AB72FDB4",
+      "transformation": "structural trim only; no geometry decoded, altered or re-encoded"
+    },
+    {
+      "model_pack_id": "open3dmodel.lower_limb.v1",
+      "display_name": "Open3Dmodel — lower limb muscles",
+      "asset_path": "/private-models/lower-limb-muscles.glb",
+      "size_bytes": 61196,
+      "approx_triangles": 11458,
+      "mesh_count": 8,
+      "requires_draco": true,
+      "integration_status": "verified",
+      "blocking_reason": null,
+      "derived_from": "lower-limb.glb",
+      "original_sha256": "001677BAC4E8B4F44F3BE0C3695B0123BC9FAD1DF9A2BDDCEECCCF4A6EEF01EB",
+      "transformation": "structural trim only; no geometry decoded, altered or re-encoded"
+    }
+  ],
+
+  "excluded_from_pack": {
+    "note": "Present in the source model but deliberately not shipped, because selecting them would let a learner be scored correct for the wrong thing.",
+    "nodes": [
+      "Common tendon of biceps brachii.r — tendon, not muscle",
+      "Common tendon of triceps brachii.r — tendon",
+      "Long head of biceps brachii tendon sheath.r — sheath",
+      "Tibialis anterior tendon sheath.r — sheath",
+      "Subacromial-subdeltoid bursa.r — bursa",
+      "Subdeltoid bursa.r — bursa",
+      "Infraserratus bursa.r — bursa",
+      "Supraserratus bursa.r — bursa",
+      "Subtendinous bursa of triceps brachii.r — bursa",
+      "Lateral subtendinous bursa of gastrocnemius muscle.r — bursa",
+      "Medial subtendinous bursa of gastrocnemius muscle.r — bursa",
+      "Subtendinous bursa of trapezius.r — bursa",
+      "Acromial / Clavicular / Spinal part of deltoid muscle.r — overlay part on the parent",
+      "Abdominal / Clavicular / Sternocostal head of pectoralis major muscle.r — overlay part on the parent",
+      "Ascending / Descending / Transverse part of Trapezius muscle.r — overlay part on the parent",
+      "Thoracoacromial artery Deltoid br.r — artery"
+    ]
+  },
+
+  "not_mapped_structures": [
+    { "structure_id": "muscular.frontalis", "reason": "No matching node in either pack." },
+    { "structure_id": "muscular.sternocleidomastoid", "reason": "No matching node in either pack." },
+    { "structure_id": "muscular.rectus_abdominis", "reason": "No matching node. No trunk pack exists at the source." },
+    { "structure_id": "muscular.external_oblique", "reason": "No matching node. 'Oblique' matches only unrelated structures." },
+    { "structure_id": "muscular.erector_spinae", "reason": "No matching node, nor iliocostalis, longissimus or spinalis." }
+  ],
+
+  "inspection_only_structures": [
+    {
+      "structure_id": "muscular.soleus",
+      "reason": "Largely covered by gastrocnemius in the posterior view, which is the only posterior surface these packs provide. Not fairly askable, so it must never be generated as a blind question. It remains visible and inspectable.",
+      "requires_explanation_in_ui": true
+    }
+  ],
+
+  "performance_measured": {
+    "combined_triangles": 28918,
+    "combined_meshes": 18,
+    "note": "Measured from the derived packs by decoding every mesh. This is 4.7% of the 1.37M + 1.30M triangles in the untouched source files. Frame rate on an iPad Air M4 has NOT been measured and must not be assumed.",
+    "requires_device_measurement": true
+  },
+
+  "attribution_required": {
+    "shown_in_app": true,
+    "component": "ModelAttributionPanel",
+    "roster": "src/data/manifests/open3dmodel-attribution.json",
+    "must_not_describe_as": ["public domain", "open source", "unmodified", "licence cleared"]
+  }
+}

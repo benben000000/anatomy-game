@@ -1,0 +1,61 @@
+{
+  "$schema": "./regions.schema.json",
+  "system_id": "muscular",
+  "content_version": "1.0.0",
+  "regions": [
+    {
+      "region_id": "region.head_neck",
+      "display_name": "Head and neck",
+      "parent_region_id": null,
+      "views": ["anterior", "posterior"]
+    },
+    {
+      "region_id": "region.shoulder",
+      "display_name": "Shoulder",
+      "parent_region_id": null,
+      "views": ["anterior", "posterior"]
+    },
+    {
+      "region_id": "region.thorax",
+      "display_name": "Chest and ribs",
+      "parent_region_id": null,
+      "views": ["anterior", "posterior"]
+    },
+    {
+      "region_id": "region.upper_limb.arm",
+      "display_name": "Arm",
+      "parent_region_id": null,
+      "views": ["anterior", "posterior"]
+    },
+    {
+      "region_id": "region.abdomen",
+      "display_name": "Abdomen",
+      "parent_region_id": null,
+      "views": ["anterior"]
+    },
+    {
+      "region_id": "region.lower_limb.thigh",
+      "display_name": "Thigh",
+      "parent_region_id": null,
+      "views": ["anterior", "posterior"]
+    },
+    {
+      "region_id": "region.lower_limb.leg",
+      "display_name": "Lower leg",
+      "parent_region_id": null,
+      "views": ["anterior", "posterior"]
+    },
+    {
+      "region_id": "region.back",
+      "display_name": "Back",
+      "parent_region_id": null,
+      "views": ["posterior"]
+    },
+    {
+      "region_id": "region.gluteal",
+      "display_name": "Hip and buttock",
+      "parent_region_id": null,
+      "views": ["posterior"]
+    }
+  ]
+}

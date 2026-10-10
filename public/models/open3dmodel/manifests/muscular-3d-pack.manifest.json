@@ -1,0 +1,100 @@
+{
+  "$schema": "./muscular-3d-pack.manifest.json",
+  "content_version": "1.0.0",
+  "source_project": "Open 3D Anatomical Model for Education ('Open3Dmodel'), AnatomyTOOL",
+  "source_project_url": "https://anatomytool.org/open3dmodel",
+  "source_licence": "CC BY-SA 4.0 (stated on the project About page; see licence verification record)",
+  "source_licence_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+
+  "integration_status": "BLOCKED_PENDING_LICENCE_VERIFICATION",
+  "integration_blocked_reason": [
+    "The project landing page states the licence in the future tense ('the model WILL BE licensed under CC BY-SA'), while the About page links the BY-SA 4.0 deed as though current.",
+    "The published archives contain no licence file, no README and no attribution notice — verified by download. The About page requires derivative materials to comply with 'the Creative Commons license's requirements stated with the material', but nothing is stated with the material.",
+    "The project owner must confirm that the model derivative will be distributed under CC BY-SA 4.0 while the application source retains its own licence. CC BY-SA ShareAlike applies to the adapted model, not to the surrounding application, so this is compatible — but only if explicitly decided.",
+    "MUSCLE ATLAS IS CURRENTLY UNLICENSED (all rights reserved). Shipping a CC BY-SA derivative inside an all-rights-reserved distribution is the conflict that must be resolved before any pack is integrated."
+  ],
+  "resolution_owner": "project owner / legal counsel",
+  "resolution_questions": [
+    "Is CC BY-SA 4.0 currently in force, or intended for a future release? (ask the Open3Dmodel project)",
+    "What licence instrument accompanies the downloadable files, given none ships inside them?",
+    "Does the project owner accept distributing the model derivative under CC BY-SA 4.0?"
+  ],
+
+  "packs": [
+    {
+      "model_pack_id": "open3dmodel.upper_limb.v1",
+      "display_name": "Open3Dmodel — upper limb",
+      "asset_path": "/models/open3dmodel/muscular/upper-limb/upper-limb.glb",
+      "source_url": "https://caskanatomy.info/open3dmodelfiles/upper-limb/upper-limb-glb.zip",
+      "source_archive_sha256": "5AF0190A6D7BF47393447AC30021E4F3BA619721C7F3A620C39A895947078432",
+      "source_archive_bytes": 6160131,
+      "source_stated_date": "July 2025",
+      "size_bytes": 6911588,
+      "approx_triangles": 1368260,
+      "mesh_count": 532,
+      "material_count": 95,
+      "texture_count": 90,
+      "requires_draco": true,
+      "integration_status": "blocked-pending-licence",
+      "blocking_reason": "CC BY-SA 4.0 scope not confirmed; no licence text ships with the archive; ShareAlike decision outstanding with the project owner.",
+      "mapped_structures": 7
+    },
+    {
+      "model_pack_id": "open3dmodel.lower_limb.v1",
+      "display_name": "Open3Dmodel — lower limb",
+      "asset_path": "/models/open3dmodel/muscular/lower-limb/lower-limb.glb",
+      "source_url": "https://caskanatomy.info/open3dmodelfiles/lower-limb/lower-limb-glb.zip",
+      "source_archive_sha256": "82AD6894BEC6E77BB2ABA970105F6EE7F0F694DE93494932EB634FD0150745C7",
+      "source_stated_date": "July 2025",
+      "size_bytes": 5924232,
+      "approx_triangles": 1302531,
+      "mesh_count": 472,
+      "material_count": 68,
+      "texture_count": 63,
+      "requires_draco": true,
+      "integration_status": "blocked-pending-licence",
+      "blocking_reason": "CC BY-SA 4.0 scope not confirmed; no licence text ships with the archive; ShareAlike decision outstanding with the project owner.",
+      "mapped_structures": 6
+    },
+    {
+      "model_pack_id": "open3dmodel.hand.v1",
+      "display_name": "Open3Dmodel — hand",
+      "asset_path": "/models/open3dmodel/muscular/hand/hand.glb",
+      "source_url": "https://caskanatomy.info/open3dmodelfiles/hand/hand-glb.zip",
+      "source_stated_date": "July 2025",
+      "size_bytes": 2883584,
+      "approx_triangles": 0,
+      "mesh_count": 0,
+      "material_count": 0,
+      "texture_count": 0,
+      "requires_draco": false,
+      "integration_status": "blocked-pending-licence",
+      "blocking_reason": "Not required by the Muscle Atlas MVP curriculum. No Muscle Atlas structure maps to the hand. Not inspected beyond a size check.",
+      "mapped_structures": 0
+    }
+  ],
+
+  "packs_deliberately_not_requested": [
+    { "pack_id": "overview-skeleton", "reason": "Skeleton only. Not a Muscle Atlas target system." },
+    { "pack_id": "vertebrae", "reason": "Skeleton only." },
+    { "pack_id": "overview-colored-skull", "reason": "Skeleton only." },
+    { "pack_id": "exploded-view-skull", "reason": "Skeleton only." },
+    { "pack_id": "colored-skull-base", "reason": "Skeleton only." },
+    { "pack_id": "subject", "reason": "Skeleton only." }
+  ],
+
+  "unavailable": {
+    "note": "No pack containing the remaining trunk muscles exists at the time of inspection.",
+    "missing_pack": "thorax / abdomen / back muscles",
+    "evidence": "The landing page lists 'Muscles of thorax, abdomen and back (March 2026)' as a workstream item. The create page offers only upper-limb, lower-limb and hand among muscle-relevant packs.",
+    "consequence": "muscular.rectus_abdominis, muscular.external_oblique, muscular.erector_spinae, muscular.frontalis and muscular.sternocleidomastoid have no sourceable 3D counterpart. The 2D board remains the only route for those five structures, which is why the accessible structure list must remain available in 3D mode."
+  },
+
+  "performance_warning": {
+    "issue": "Both muscle packs exceed the documented 3D triangle budget before optimisation.",
+    "measured": { "upper_limb_triangles": 1368260, "lower_limb_triangles": 1302531, "budget": 1500000 },
+    "concern": "Each pack is individually just inside budget but carries 470-530 meshes and 63-90 textures. On an iPad Air M4 at 60 fps this is achievable only with a carefully optimised, region-trimmed derivative — never with the published files as-is.",
+    "required_action": "Trim to the mapped structures only, merge where merging does not break selection, and re-measure before any pack is accepted. See docs/three-d-asset-pipeline.md.",
+    "draco_note": "KHR_draco_mesh_compression is listed in extensionsRequired, meaning it is mandatory. The decoder must be bundled locally or served from our own origin; it must never be fetched from a third-party CDN at runtime, both for offline support and for licence hygiene."
+  }
+}

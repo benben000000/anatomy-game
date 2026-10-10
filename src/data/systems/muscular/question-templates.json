@@ -1,0 +1,103 @@
+{
+  "$schema": "./question-templates.schema.json",
+  "system_id": "muscular",
+  "content_version": "1.0.0",
+  "templates": [
+    {
+      "template_id": "template.locate_named_structure",
+      "mode": "identify",
+      "prompt_format": "locate_named_structure",
+      "expected_answer_type": "structure_id",
+      "valid_structure_types": ["muscle", "muscle_group"],
+      "required_visual_representation": "any_selectable",
+      "difficulty_range": ["introductory", "advanced"],
+      "allowed_views": ["anterior", "posterior"],
+      "distractor_rules": { "mode": "none", "max_confusability_risk": 0 },
+      "hint_policy": {
+        "levels": ["region", "approximate_area", "reveal"],
+        "unlimited": true,
+        "cost": "none"
+      },
+      "explanation_policy": "combined",
+      "implemented": true
+    },
+    {
+      "template_id": "template.locate_named_structure_review",
+      "mode": "review",
+      "prompt_format": "locate_named_structure",
+      "expected_answer_type": "structure_id",
+      "valid_structure_types": ["muscle", "muscle_group"],
+      "required_visual_representation": "any_selectable",
+      "difficulty_range": ["introductory", "advanced"],
+      "allowed_views": ["anterior", "posterior"],
+      "distractor_rules": { "mode": "spatial_neighbours", "max_confusability_risk": 0.5 },
+      "hint_policy": {
+        "levels": ["region", "approximate_area", "reveal"],
+        "unlimited": true,
+        "cost": "none"
+      },
+      "explanation_policy": "distinction_note",
+      "implemented": true
+    },
+    {
+      "template_id": "template.locate_named_structure_learn",
+      "mode": "learn_then_test",
+      "prompt_format": "locate_named_structure",
+      "expected_answer_type": "structure_id",
+      "valid_structure_types": ["muscle", "muscle_group"],
+      "required_visual_representation": "any_selectable",
+      "difficulty_range": ["introductory", "advanced"],
+      "allowed_views": ["anterior", "posterior"],
+      "distractor_rules": { "mode": "none", "max_confusability_risk": 0 },
+      "hint_policy": {
+        "levels": ["region", "approximate_area", "reveal"],
+        "unlimited": true,
+        "cost": "none"
+      },
+      "explanation_policy": "combined",
+      "implemented": true
+    },
+    {
+      "template_id": "template.identify_highlighted_structure",
+      "mode": "identify",
+      "prompt_format": "identify_highlighted_structure",
+      "expected_answer_type": "structure_id",
+      "valid_structure_types": ["muscle", "muscle_group"],
+      "required_visual_representation": "any_selectable",
+      "difficulty_range": ["introductory", "advanced"],
+      "allowed_views": ["anterior", "posterior"],
+      "distractor_rules": { "mode": "none", "max_confusability_risk": 0 },
+      "hint_policy": { "levels": ["region"], "unlimited": true, "cost": "none" },
+      "explanation_policy": "location_summary",
+      "implemented": false
+    },
+    {
+      "template_id": "template.which_structure_performs_action",
+      "mode": "identify",
+      "prompt_format": "which_structure_performs_action",
+      "expected_answer_type": "structure_id",
+      "valid_structure_types": ["muscle"],
+      "required_visual_representation": "any_selectable",
+      "difficulty_range": ["intermediate", "advanced"],
+      "allowed_views": ["anterior", "posterior"],
+      "distractor_rules": { "mode": "confusable_pairs", "max_confusability_risk": 0.6 },
+      "hint_policy": { "levels": ["region"], "unlimited": true, "cost": "none" },
+      "explanation_policy": "function_summary",
+      "implemented": false
+    },
+    {
+      "template_id": "template.type_structure_name",
+      "mode": "identify",
+      "prompt_format": "type_structure_name",
+      "expected_answer_type": "text",
+      "valid_structure_types": ["muscle"],
+      "required_visual_representation": "any_selectable",
+      "difficulty_range": ["introductory", "advanced"],
+      "allowed_views": ["anterior", "posterior"],
+      "distractor_rules": { "mode": "none", "max_confusability_risk": 0 },
+      "hint_policy": { "levels": ["reveal"], "unlimited": true, "cost": "none" },
+      "explanation_policy": "combined",
+      "implemented": false
+    }
+  ]
+}

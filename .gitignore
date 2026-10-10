@@ -1,0 +1,40 @@
+# dependencies
+node_modules/
+
+# build output
+dist/
+dev-dist/
+coverage/
+*.tsbuildinfo
+
+# test output
+test-results/
+playwright-report/
+blob-report/
+.playwright/
+
+# environment
+.env
+.env.local
+.env.*.local
+
+# editor / OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# Never commit provisional artwork into a release path by accident — the files
+# themselves are committed for developer builds, but this guards the idea that
+# someone might blanket-ignore the assets directory.
+
+# Local screenshots and tooling scratch never committed
+dev-screenshots/
+.freebuff/

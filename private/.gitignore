@@ -1,0 +1,29 @@
+# Private local assets.
+#
+# Open3Dmodel GLB files and every derivative built from them.
+#
+# Reasons, all of which must hold simultaneously:
+#
+#   1. The model is offered under CC BY-SA 4.0 as stated by the source project.
+#      Redistribution is not intended here: Muscle Atlas is for personal use and
+#      is not published, sold, hosted, or shared.
+#   2. These files are large. The originals are ~6.5 MB each and derivatives are
+#      built from them. Committing them would bloat the repository for no benefit
+#      to anyone but the owner.
+#   3. They must never enter a build. vite.config.ts copies only from public/,
+#      and the 3D loader refuses to run without an explicit opt-in, so a stray
+#      copy under public/ is still required for anything to ship.
+#
+# PROVENANCE.json IS committed deliberately: it records where the files came
+# from, their SHA-256 hashes, and which derivative came from which original. That
+# record is what makes an untracked binary auditable rather than mysterious.
+
+private/assets/open3dmodel/original/
+private/assets/open3dmodel/derived/
+private/assets/open3dmodel/*.zip
+
+# Belt and braces: refuse these anywhere in the tree, so an accidental move into
+# public/ or src/ is caught rather than shipped.
+*.glb
+*.gltf
+*.blend

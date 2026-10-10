@@ -1,0 +1,376 @@
+{
+  "$schema": "./three-d-visual-mappings.schema.json",
+  "system_id": "muscular",
+  "content_version": "1.0.0",
+
+  "_provenance": {
+    "generated_from": "Node-name inspection of the official Open3Dmodel upper-limb and lower-limb GLB packs",
+    "inspected_on": "2026-10-10",
+    "source_project": "Open 3D Anatomical Model for Education ('Open3Dmodel'), AnatomyTOOL",
+    "nodes_inspected": 1044,
+    "status": "DRAFT — no pack may ship until the licence questions in assets-source/open3dmodel/metadata/original-source-record.json are resolved",
+    "every_mapping_status_is": "draft",
+    "reviewer": null,
+    "review_date": null,
+    "note": "Node names below were read directly from the published GLB files, not inferred. They are still REQUIRING HUMAN CONFIRMATION against the full node list before any pack is integrated, because a node name that reads correctly may still be the wrong geometry."
+  },
+
+  "mappings": [
+    {
+      "visual_id": "muscular.3d.upper_limb.deltoid.surface",
+      "structure_id": "muscular.deltoid",
+      "representation_type": "3d_mesh",
+      "model_pack_id": "open3dmodel.upper_limb.v1",
+      "asset_path": "/models/open3dmodel/muscular/upper-limb/upper-limb.glb",
+      "parts": [
+        { "node_name": "Deltoid muscle.r", "laterality_suffix": ".r", "is_parent_overlay": false, "selection_priority": 800 },
+        { "node_name": "Acromial part of deltoid muscle.r", "laterality_suffix": ".r", "is_parent_overlay": true, "selection_priority": 400 },
+        { "node_name": "Clavicular part of deltoid muscle.r", "laterality_suffix": ".r", "is_parent_overlay": true, "selection_priority": 400 },
+        { "node_name": "Spinal part of deltoid muscle.r", "laterality_suffix": ".r", "is_parent_overlay": true, "selection_priority": 400 }
+      ],
+      "view_ids": ["anterior", "posterior"],
+      "layer_id": "layer.superficial",
+      "laterality": "right",
+      "occlusion_policy": "peel",
+      "selectable": true,
+      "requires_disambiguation": false,
+      "fair_target_radius_m": null,
+      "visibility_notes": "Whole deltoid node present, with acromial, clavicular and spinal parts modelled as overlays on top of it. Parts are not independently answerable.",
+      "source_asset_id": "asset.open3dmodel.upper_limb.glb",
+      "content_source_references": [],
+      "mapping_status": "draft",
+      "reviewer": null,
+      "review_date": null
+    },
+
+    {
+      "visual_id": "muscular.3d.upper_limb.pectoralis_major.surface",
+      "structure_id": "muscular.pectoralis_major",
+      "representation_type": "3d_mesh",
+      "model_pack_id": "open3dmodel.upper_limb.v1",
+      "asset_path": "/models/open3dmodel/muscular/upper-limb/upper-limb.glb",
+      "parts": [
+        { "node_name": "Pectoralis major.r", "laterality_suffix": ".r", "is_parent_overlay": false, "selection_priority": 800 },
+        { "node_name": "Abdominal head of pectoralis major muscle.r", "laterality_suffix": ".r", "is_parent_overlay": true, "selection_priority": 400 },
+        { "node_name": "Clavicular head of pectoralis major muscle.r", "laterality_suffix": ".r", "is_parent_overlay": true, "selection_priority": 400 },
+        { "node_name": "Sternocostal head of pectoralis major muscle.r", "laterality_suffix": ".r", "is_parent_overlay": true, "selection_priority": 400 }
+      ],
+      "view_ids": ["anterior"],
+      "layer_id": "layer.superficial",
+      "laterality": "right",
+      "occlusion_policy": "peel",
+      "selectable": true,
+      "requires_disambiguation": false,
+      "fair_target_radius_m": null,
+      "visibility_notes": "Whole pectoralis major node present, with abdominal, clavicular and sternocostal heads as overlays.",
+      "source_asset_id": "asset.open3dmodel.upper_limb.glb",
+      "content_source_references": [],
+      "mapping_status": "draft",
+      "reviewer": null,
+      "review_date": null
+    },
+
+    {
+      "visual_id": "muscular.3d.upper_limb.serratus_anterior.surface",
+      "structure_id": "muscular.serratus_anterior",
+      "representation_type": "3d_mesh",
+      "model_pack_id": "open3dmodel.upper_limb.v1",
+      "asset_path": "/models/open3dmodel/muscular/upper-limb/upper-limb.glb",
+      "parts": [
+        { "node_name": "Serratus anterior muscle.r", "laterality_suffix": ".r", "is_parent_overlay": false, "selection_priority": 600 }
+      ],
+      "view_ids": ["anterior"],
+      "layer_id": "layer.superficial",
+      "laterality": "right",
+      "occlusion_policy": "always",
+      "selectable": true,
+      "requires_disambiguation": true,
+      "fair_target_radius_m": null,
+      "visibility_notes": "Single node, no overlay. Sits against the rib cage and is partly covered by the scapula in posterior view, so anterior is the only honest view. Small surface area — disambiguation is required against neighbouring wall muscles.",
+      "source_asset_id": "asset.open3dmodel.upper_limb.glb",
+      "content_source_references": [],
+      "mapping_status": "draft",
+      "reviewer": null,
+      "review_date": null
+    },
+
+    {
+      "visual_id": "muscular.3d.upper_limb.biceps_brachii.surface",
+      "structure_id": "muscular.biceps_brachii",
+      "representation_type": "3d_mesh",
+      "model_pack_id": "open3dmodel.upper_limb.v1",
+      "asset_path": "/models/open3dmodel/muscular/upper-limb/upper-limb.glb",
+      "parts": [
+        { "node_name": "Long head of biceps brachii.r", "laterality_suffix": ".r", "is_parent_overlay": false, "selection_priority": 700 },
+        { "node_name": "Short head of biceps brachii.r", "laterality_suffix": ".r", "is_parent_overlay": false, "selection_priority": 700 }
+      ],
+      "view_ids": ["anterior"],
+      "layer_id": "layer.superficial",
+      "laterality": "right",
+      "occlusion_policy": "always",
+      "selectable": true,
+      "requires_disambiguation": false,
+      "fair_target_radius_m": null,
+      "visibility_notes": "Two heads, no whole-muscle parent node. 'Common tendon of biceps brachii' and the tendon sheath are deliberately NOT mapped — they are tendon, not muscle, and selecting them must not count as identifying the muscle.",
+      "source_asset_id": "asset.open3dmodel.upper_limb.glb",
+      "content_source_references": [],
+      "mapping_status": "draft",
+      "reviewer": null,
+      "review_date": null
+    },
+
+    {
+      "visual_id": "muscular.3d.upper_limb.triceps_brachii.surface",
+      "structure_id": "muscular.triceps_brachii",
+      "representation_type": "3d_mesh",
+      "model_pack_id": "open3dmodel.upper_limb.v1",
+      "asset_path": "/models/open3dmodel/muscular/upper-limb/upper-limb.glb",
+      "parts": [
+        { "node_name": "Long head of triceps brachii.r", "laterality_suffix": ".r", "is_parent_overlay": false, "selection_priority": 700 },
+        { "node_name": "Lateral head of triceps brachii.r", "laterality_suffix": ".r", "is_parent_overlay": false, "selection_priority": 700 },
+        { "node_name": "Medial head of triceps brachii.r", "laterality_suffix": ".r", "is_parent_overlay": false, "selection_priority": 700 }
+      ],
+      "view_ids": ["posterior"],
+      "layer_id": "layer.superficial",
+      "laterality": "right",
+      "occlusion_policy": "always",
+      "selectable": true,
+      "requires_disambiguation": false,
+      "fair_target_radius_m": null,
+      "visibility_notes": "Three heads, no whole-muscle parent node. 'Common tendon of triceps brachii' and the subtendinous bursa are not mapped.",
+      "source_asset_id": "asset.open3dmodel.upper_limb.glb",
+      "content_source_references": [],
+      "mapping_status": "draft",
+      "reviewer": null,
+      "review_date": null
+    },
+
+    {
+      "visual_id": "muscular.3d.upper_limb.trapezius.surface",
+      "structure_id": "muscular.trapezius",
+      "representation_type": "3d_mesh",
+      "model_pack_id": "open3dmodel.upper_limb.v1",
+      "asset_path": "/models/open3dmodel/muscular/upper-limb/upper-limb.glb",
+      "parts": [
+        { "node_name": "Trapezius muscle.r", "laterality_suffix": ".r", "is_parent_overlay": false, "selection_priority": 800 },
+        { "node_name": "Ascending part of Trapezius muscle.r", "laterality_suffix": ".r", "is_parent_overlay": true, "selection_priority": 400 },
+        { "node_name": "Descending part of Trapezius muscle.r", "laterality_suffix": ".r", "is_parent_overlay": true, "selection_priority": 400 },
+        { "node_name": "Transverse part of trapezius muscle.r", "laterality_suffix": ".r", "is_parent_overlay": true, "selection_priority": 400 }
+      ],
+      "view_ids": ["posterior"],
+      "layer_id": "layer.superficial",
+      "laterality": "right",
+      "occlusion_policy": "peel",
+      "selectable": true,
+      "requires_disambiguation": false,
+      "fair_target_radius_m": null,
+      "visibility_notes": "Whole trapezius node present with ascending, descending and transverse parts as overlays. Most of the muscle lies outside the limb packs; only the portion bounding the shoulder is present.",
+      "source_asset_id": "asset.open3dmodel.upper_limb.glb",
+      "content_source_references": [],
+      "mapping_status": "draft",
+      "reviewer": null,
+      "review_date": null
+    },
+
+    {
+      "visual_id": "muscular.3d.upper_limb.latissimus_dorsi.surface",
+      "structure_id": "muscular.latissimus_dorsi",
+      "representation_type": "3d_mesh",
+      "model_pack_id": "open3dmodel.upper_limb.v1",
+      "asset_path": "/models/open3dmodel/muscular/upper-limb/upper-limb.glb",
+      "parts": [
+        { "node_name": "Latissimus dorsi.r", "laterality_suffix": ".r", "is_parent_overlay": false, "selection_priority": 700 }
+      ],
+      "view_ids": ["posterior"],
+      "layer_id": "layer.superficial",
+      "laterality": "right",
+      "occlusion_policy": "always",
+      "selectable": true,
+      "requires_disambiguation": false,
+      "fair_target_radius_m": null,
+      "visibility_notes": "Single node. Only the portion bounding the upper limb is present; the thoracic and lumbar part is outside these packs.",
+      "source_asset_id": "asset.open3dmodel.upper_limb.glb",
+      "content_source_references": [],
+      "mapping_status": "draft",
+      "reviewer": null,
+      "review_date": null
+    },
+
+    {
+      "visual_id": "muscular.3d.lower_limb.rectus_femoris.surface",
+      "structure_id": "muscular.rectus_femoris",
+      "representation_type": "3d_mesh",
+      "model_pack_id": "open3dmodel.lower_limb.v1",
+      "asset_path": "/models/open3dmodel/muscular/lower-limb/lower-limb.glb",
+      "parts": [
+        { "node_name": "Rectus femoris.r", "laterality_suffix": ".r", "is_parent_overlay": false, "selection_priority": 800 }
+      ],
+      "view_ids": ["anterior"],
+      "layer_id": "layer.superficial",
+      "laterality": "right",
+      "occlusion_policy": "always",
+      "selectable": true,
+      "requires_disambiguation": false,
+      "fair_target_radius_m": null,
+      "visibility_notes": "Single node, large and anterior. One of the most fairly selectable muscles in the pack.",
+      "source_asset_id": "asset.open3dmodel.lower_limb.glb",
+      "content_source_references": [],
+      "mapping_status": "draft",
+      "reviewer": null,
+      "review_date": null
+    },
+
+    {
+      "visual_id": "muscular.3d.lower_limb.vastus_lateralis.surface",
+      "structure_id": "muscular.vastus_lateralis",
+      "representation_type": "3d_mesh",
+      "model_pack_id": "open3dmodel.lower_limb.v1",
+      "asset_path": "/models/open3dmodel/muscular/lower-limb/lower-limb.glb",
+      "parts": [
+        { "node_name": "Vastus lateralis muscle.r", "laterality_suffix": ".r", "is_parent_overlay": false, "selection_priority": 800 }
+      ],
+      "view_ids": ["anterior", "lateral"],
+      "layer_id": "layer.superficial",
+      "laterality": "right",
+      "occlusion_policy": "always",
+      "selectable": true,
+      "requires_disambiguation": false,
+      "fair_target_radius_m": null,
+      "visibility_notes": "Single node on the lateral aspect, partially wrapping from anterior. An oblique view shows it best.",
+      "source_asset_id": "asset.open3dmodel.lower_limb.glb",
+      "content_source_references": [],
+      "mapping_status": "draft",
+      "reviewer": null,
+      "review_date": null
+    },
+
+    {
+      "visual_id": "muscular.3d.lower_limb.vastus_medialis.surface",
+      "structure_id": "muscular.vastus_medialis",
+      "representation_type": "3d_mesh",
+      "model_pack_id": "open3dmodel.lower_limb.v1",
+      "asset_path": "/models/open3dmodel/muscular/lower-limb/lower-limb.glb",
+      "parts": [
+        { "node_name": "Vastus medialis muscle.r", "laterality_suffix": ".r", "is_parent_overlay": false, "selection_priority": 600 }
+      ],
+      "view_ids": ["anterior", "medial"],
+      "layer_id": "layer.superficial",
+      "laterality": "right",
+      "occlusion_policy": "always",
+      "selectable": true,
+      "requires_disambiguation": true,
+      "fair_target_radius_m": null,
+      "visibility_notes": "Single node on the medial aspect above the knee. Small surface area and it abuts rectus femoris, so disambiguation is required. The 2D board flags this structure for the same reason.",
+      "source_asset_id": "asset.open3dmodel.lower_limb.glb",
+      "content_source_references": [],
+      "mapping_status": "draft",
+      "reviewer": null,
+      "review_date": null
+    },
+
+    {
+      "visual_id": "muscular.3d.lower_limb.tibialis_anterior.surface",
+      "structure_id": "muscular.tibialis_anterior",
+      "representation_type": "3d_mesh",
+      "model_pack_id": "open3dmodel.lower_limb.v1",
+      "asset_path": "/models/open3dmodel/muscular/lower-limb/lower-limb.glb",
+      "parts": [
+        { "node_name": "Tibialis anterior muscle.r", "laterality_suffix": ".r", "is_parent_overlay": false, "selection_priority": 800 }
+      ],
+      "view_ids": ["anterior"],
+      "layer_id": "layer.superficial",
+      "laterality": "right",
+      "occlusion_policy": "always",
+      "selectable": true,
+      "requires_disambiguation": false,
+      "fair_target_radius_m": null,
+      "visibility_notes": "Single node on the anterior shin. The tendon sheath is deliberately not mapped.",
+      "source_asset_id": "asset.open3dmodel.lower_limb.glb",
+      "content_source_references": [],
+      "mapping_status": "draft",
+      "reviewer": null,
+      "review_date": null
+    },
+
+    {
+      "visual_id": "muscular.3d.lower_limb.gluteus_maximus.surface",
+      "structure_id": "muscular.gluteus_maximus",
+      "representation_type": "3d_mesh",
+      "model_pack_id": "open3dmodel.lower_limb.v1",
+      "asset_path": "/models/open3dmodel/muscular/lower-limb/lower-limb.glb",
+      "parts": [
+        { "node_name": "Gluteus maximus muscle.r", "laterality_suffix": ".r", "is_parent_overlay": false, "selection_priority": 800 }
+      ],
+      "view_ids": ["posterior"],
+      "layer_id": "layer.superficial",
+      "laterality": "right",
+      "occlusion_policy": "always",
+      "selectable": true,
+      "requires_disambiguation": false,
+      "fair_target_radius_m": null,
+      "visibility_notes": "Single node, large and posterior. Bursae around it are not mapped.",
+      "source_asset_id": "asset.open3dmodel.lower_limb.glb",
+      "content_source_references": [],
+      "mapping_status": "draft",
+      "reviewer": null,
+      "review_date": null
+    },
+
+    {
+      "visual_id": "muscular.3d.lower_limb.gastrocnemius.surface",
+      "structure_id": "muscular.gastrocnemius",
+      "representation_type": "3d_mesh",
+      "model_pack_id": "open3dmodel.lower_limb.v1",
+      "asset_path": "/models/open3dmodel/muscular/lower-limb/lower-limb.glb",
+      "parts": [
+        { "node_name": "Lateral head of gastrocnemius.r", "laterality_suffix": ".r", "is_parent_overlay": false, "selection_priority": 700 },
+        { "node_name": "Medial head of gastrocnemius.r", "laterality_suffix": ".r", "is_parent_overlay": false, "selection_priority": 700 }
+      ],
+      "view_ids": ["posterior"],
+      "layer_id": "layer.superficial",
+      "laterality": "right",
+      "occlusion_policy": "always",
+      "selectable": true,
+      "requires_disambiguation": false,
+      "fair_target_radius_m": null,
+      "visibility_notes": "Two heads and NO whole-muscle parent node in this pack. The two subtendinous bursae are deliberately not mapped.",
+      "source_asset_id": "asset.open3dmodel.lower_limb.glb",
+      "content_source_references": [],
+      "mapping_status": "draft",
+      "reviewer": null,
+      "review_date": null
+    },
+
+    {
+      "visual_id": "muscular.3d.lower_limb.soleus.surface",
+      "structure_id": "muscular.soleus",
+      "representation_type": "3d_mesh",
+      "model_pack_id": "open3dmodel.lower_limb.v1",
+      "asset_path": "/models/open3dmodel/muscular/lower-limb/lower-limb.glb",
+      "parts": [
+        { "node_name": "Soleus muscle.r", "laterality_suffix": ".r", "is_parent_overlay": false, "selection_priority": 700 }
+      ],
+      "view_ids": ["posterior"],
+      "layer_id": "layer.superficial",
+      "laterality": "right",
+      "occlusion_policy": "only_when_unoccluded",
+      "selectable": true,
+      "requires_disambiguation": true,
+      "fair_target_radius_m": null,
+      "visibility_notes": "Soleus is largely covered by gastrocnemius in the posterior view, which is the only posterior surface available in this pack. It is NOT fairly askable from behind. It is retained as draft pending a reviewer decision, mirroring the same question raised for the 2D board.",
+      "source_asset_id": "asset.open3dmodel.lower_limb.glb",
+      "content_source_references": [],
+      "mapping_status": "draft",
+      "reviewer": null,
+      "review_date": null
+    }
+  ],
+
+  "structures_without_3d_mapping": [
+    { "structure_id": "muscular.frontalis", "reason": "No matching node in either pack. Head and non-skeletal structures were out of scope for the released limb packs." },
+    { "structure_id": "muscular.sternocleidomastoid", "reason": "No matching node in either pack." },
+    { "structure_id": "muscular.rectus_abdominis", "reason": "No matching node in either pack. Trunk muscles were not released as a pack at the time of inspection." },
+    { "structure_id": "muscular.external_oblique", "reason": "No matching node. A substring search for 'oblique' returns only unrelated structures." },
+    { "structure_id": "muscular.erector_spinae", "reason": "No matching node, and no iliocostalis, longissimus or spinalis nodes. Partly hidden behind other structures in any case." }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "$schema": "./asset-manifest.schema.json",
+  "content_version": "1.0.0",
+  "entries": [
+    {
+      "asset_id": "asset.anatomy.muscular.anterior.muscles",
+      "file_path": "/assets/anatomy/muscular/anterior/anterior-muscles.svg",
+      "asset_type": "svg",
+      "associated_system_id": "muscular",
+      "associated_structure_id": null,
+      "source_creator": "UNSET — development placeholder geometry, not artwork",
+      "source_url_or_reference": "UNSET — see docs/04-asset-pipeline-and-licensing.md",
+      "license": "UNSET",
+      "attribution_requirement": null,
+      "modification_notes": "Placeholder rectangles marking expected muscle locations. Not anatomically accurate.",
+      "medical_review_status": "provisional",
+      "reviewer": null,
+      "review_date": null,
+      "content_version": "1.0.0"
+    },
+    {
+      "asset_id": "asset.anatomy.muscular.posterior.muscles",
+      "file_path": "/assets/anatomy/muscular/posterior/posterior-muscles.svg",
+      "asset_type": "svg",
+      "associated_system_id": "muscular",
+      "associated_structure_id": null,
+      "source_creator": "UNSET — development placeholder geometry, not artwork",
+      "source_url_or_reference": "UNSET — see docs/04-asset-pipeline-and-licensing.md",
+      "license": "UNSET",
+      "attribution_requirement": null,
+      "modification_notes": "Placeholder rectangles marking expected muscle locations. Not anatomically accurate.",
+      "medical_review_status": "provisional",
+      "reviewer": null,
+      "review_date": null,
+      "content_version": "1.0.0"
+    },
+    {
+      "asset_id": "asset.open3dmodel.upper_limb.glb",
+      "file_path": "/private-models/upper-limb-muscles.glb",
+      "asset_type": "glb",
+      "associated_system_id": "muscular",
+      "associated_structure_id": null,
+      "source_creator": "Open 3D Anatomical Model for Education ('Open3Dmodel'), AnatomyTOOL. Full contributor roster in src/data/manifests/open3dmodel-attribution.json.",
+      "source_url_or_reference": "https://anatomytool.org/open3dmodel (project) — downloaded from https://caskanatomy.info/open3dmodelfiles/upper-limb/upper-limb-glb.zip (archive SHA-256 5AF0190A6D7BF47393447AC30021E4F3BA619721C7F3A620C39A895947078432, verified 2026-10-10)",
+      "license": "UNSET",
+      "attribution_requirement": "CC BY-SA 4.0 as stated on the project About page, NOT VERIFIED. Private use does not trigger ShareAlike because nothing is distributed, but the licence is not recorded as confirmed. Roster: src/data/manifests/open3dmodel-attribution.json.",
+      "modification_notes": "DERIVATIVE of the official pack. Structural trim only: kept the mapped muscle nodes and their parent chains, rewrote the glTF index tables. No geometry decoded, altered, retopologised or re-encoded. Original SHA-256 E440C84C...72FDB4, unchanged, from caskanatomy.info (archive 5AF0190A...078432). Provenance and full details: private/assets/open3dmodel/PROVENANCE.json. Private local use only; not for redistribution.",
+      "medical_review_status": "pending",
+      "reviewer": null,
+      "review_date": null,
+      "content_version": "1.0.0"
+    },
+    {
+      "asset_id": "asset.open3dmodel.lower_limb.glb",
+      "file_path": "/private-models/lower-limb-muscles.glb",
+      "asset_type": "glb",
+      "associated_system_id": "muscular",
+      "associated_structure_id": null,
+      "source_creator": "Open 3D Anatomical Model for Education ('Open3Dmodel'), AnatomyTOOL. Same provenance and attribution as the upper-limb pack.",
+      "source_url_or_reference": "https://anatomytool.org/open3dmodel (project) — downloaded from https://caskanatomy.info/open3dmodelfiles/lower-limb/lower-limb-glb.zip (archive SHA-256 82AD6894BEC6E77BB2ABA970105F6EE7F0F694DE93494932EB634FD0150745C7, verified 2026-10-10)",
+      "license": "UNSET",
+      "attribution_requirement": "CC BY-SA 4.0 as stated on the project About page, NOT VERIFIED. Private use does not trigger ShareAlike because nothing is distributed, but the licence is not recorded as confirmed. Roster: src/data/manifests/open3dmodel-attribution.json.",
+      "modification_notes": "DERIVATIVE of the official pack. Structural trim only: kept the mapped muscle nodes and their parent chains, rewrote the glTF index tables. No geometry decoded, altered, retopologised or re-encoded. Original SHA-256 001677BA...F01EB, unchanged. Provenance: private/assets/open3dmodel/PROVENANCE.json. Private local use only; not for redistribution.",
+      "medical_review_status": "pending",
+      "reviewer": null,
+      "review_date": null,
+      "content_version": "1.0.0"
+    }
+  ]
+}

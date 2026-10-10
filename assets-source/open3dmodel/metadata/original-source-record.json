@@ -1,0 +1,294 @@
+{
+  "$comment": "Machine-readable record of the official-source verification performed for the Open 3D Model (Open3Dmodel) project. Every field here was read from the official pages listed in `pages_verified`, on the date in `accessed`. Nothing in this file is inferred, assumed, or filled in from memory.",
+
+  "record_version": "1.0.0",
+  "recorded_at": "2026-10-10",
+  "recorded_by": "Muscle Atlas integration, Phase A",
+  "verification_status": "INCOMPLETE — see blocking_questions",
+
+  "project": {
+    "name": "Open 3D Anatomical Model for Education ('Open3Dmodel')",
+    "official_landing_page": "https://anatomytool.org/open3dmodel",
+    "platform": "AnatomyTOOL",
+    "platform_operators": [
+      "Department of Anatomy & Embryology, Leiden University Medical Center (LUMC), Netherlands",
+      "Faculty of Health, Medicine & Life Science, Maastricht University (UM), Netherlands"
+    ],
+    "platform_support": "Dutch Association of Anatomists (Nederlandse Anatomen Vereniging, NAV)",
+    "funding": "Grant from the Dutch Ministry of Education, Culture and Science (surf.nl), obtained 2022",
+    "project_lead": "Paul (O.P.) Gobée, MD, anatomist, LUMC"
+  },
+
+  "pages_verified": [
+    { "url": "https://anatomytool.org/open3dmodel", "purpose": "project overview, stated licence intent, roadmap", "accessed": "2026-10-10" },
+    { "url": "https://anatomytool.org/open3dmodel-about", "purpose": "licence chain, provenance, anatomy-review method, status", "accessed": "2026-10-10" },
+    { "url": "https://anatomytool.org/open3dmodel-create", "purpose": "source files and selection models — actual download links", "accessed": "2026-10-10" },
+    { "url": "https://anatomytool.org/open3dmodel-learn", "purpose": "learning material / viewer entry points", "accessed": "2026-10-10" },
+    { "url": "https://anatomytool.org/open3dmodel-credit", "purpose": "full contributor roster (attribution source)", "accessed": "2026-10-10" },
+    { "url": "https://anatomytool.org/legal-information", "purpose": "AnatomyTOOL Terms of Service", "accessed": "2026-10-10" }
+  ],
+
+  "licence": {
+    "stated_licence": "Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)",
+    "stated_licence_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "how_it_was_stated": {
+      "about_page": "\"further develop an open-licensed (Creative Commons Attribute ShareAlike CC BY SA) 3D model of human anatomy\" with a direct link to the CC BY-SA 4.0 deed",
+      "derivative_clause": "\"The creation and distribution of any derivative materials from the open3dmodel should comply with the Creative Commons license's requirements stated with the material.\"",
+      "license_version_confirmed_by": "The linked deed URL path ends in /4.0/"
+    },
+
+    "ambiguities_found": [
+      {
+        "id": "LIC-AMB-1",
+        "severity": "blocking",
+        "finding": "The landing page states the licence in the FUTURE tense: \"The model WILL BE licensed under Creative Commons Attribution ShareAlike (CC BY SA)\".",
+        "detail": "The About page is more affirmative about the grant's intent and links the BY-SA 4.0 deed, but the landing page — the page a downloader most often lands on — describes the licence as a goal rather than a current fact.",
+        "why_it_matters": "Whether a licence is currently in force, or intended, determines whether redistribution obligations apply today or later. This cannot be resolved from the published pages alone."
+      },
+      {
+        "id": "LIC-AMB-2",
+        "severity": "blocking",
+        "finding": "The distributed archives contain NO licence file, NO README and NO attribution notice.",
+        "detail": "Verified by downloading upper-limb-glb.zip (SHA-256 5AF0190A6D7BF47393447AC30021E4F3BA619721C7F3A620C39A895947078432): the archive contains exactly one entry, `upper-limb.glb`. Nothing else.",
+        "why_it_matters": "The About page requires derivative materials to comply with \"the Creative Commons license's requirements stated with the material\". No such statement ships with the material, so the operative terms attached to the file itself cannot be confirmed from the file."
+      },
+      {
+        "id": "LIC-AMB-3",
+        "severity": "advisory",
+        "finding": "The AnatomyTOOL landing page self-describes as \"Non-commercial, University based.\"",
+        "detail": "This describes the PLATFORM, not the model. CC BY-SA 4.0 itself permits commercial reuse. Whether any separate, model-specific non-commercial restriction exists could not be found on the official pages.",
+        "why_it_matters": "CC BY-SA 4.0 permits commercial use, so this is probably not a restriction on the model. It must nonetheless be confirmed before any commercial release, because the page is ambiguous about what it scopes."
+      },
+      {
+        "id": "LIC-AMB-4",
+        "severity": "advisory",
+        "finding": "Three generations of CC BY-SA are stacked in the provenance chain.",
+        "detail": "BodyParts3D (CC BY-SA) -> Z-Anatomy (CC BY-SA) -> Open3Dmodel (CC BY-SA). The viewer code is separately GPL3.",
+        "why_it_matters": "ShareAlike is transitive. Any Adapted Material carries CC BY-SA 4.0 obligations regardless of which generation it was derived from. This is manageable, but the attribution chain must be preserved in full, not truncated to the most recent generation."
+      }
+    ],
+
+    "share_alike_obligations": {
+      "applies_to": "the adapted model file, not the surrounding application",
+      "basis": "CC BY-SA 4.0 section 3(b)(1); Creative Commons' own FAQ states the ShareAlike condition applies to the Adapted Material and not to the larger work into which it is incorporated",
+      "practical_consequence": "The application source may remain under a separate, more restrictive licence PROVIDED the model derivative is distributed under CC BY-SA 4.0, is clearly separated, and is accompanied by the required attribution and licence copy.",
+      "incompatibility_with_current_project_licence": {
+        "project_licence": "UNLICENSED (all rights reserved), private: true",
+        "verdict": "Compatible ONLY IF the model derivative is kept under CC BY-SA 4.0 and separated from proprietary code. If the project owner intends the shipped model file to be proprietary, or to be distributed under terms more restrictive than CC BY-SA 4.0, that intent is NOT compatible and the integration must not ship.",
+        "decision_owner": "project owner / legal counsel — this is a business decision, not an engineering one"
+      }
+    },
+
+    "required_attribution": {
+      "basis": "CC BY-SA 4.0 section 3(a)(1) and 3(a)(3), plus the project's own instruction that credits are published with the material",
+      "must_record": [
+        "Notice that a licence was applied to the work",
+        "A link to the licence",
+        "Indication that modifications were made, including a description of them",
+        "A link to the material",
+        "Retention of notices about how the material was modified"
+      ],
+      "contributor_roster": {
+        "source": "https://anatomytool.org/open3dmodel-credit",
+        "note": "The project publishes a named roster with degrees and institutional affiliations. CC BY-SA attribution requires reasonable identification of the author(s). For a model of this provenance, the reasonable reading is that the roster must be reproduced, not summarised.",
+        "count_approximately": 30,
+        "categories": ["project lead", "project support", "core team", "anatomists", "clinicians", "modellers", "contributing modellers", "web viewer/programming", "further contributors"],
+        "full_roster_captured_at": "src/data/manifests/open3dmodel-attribution.json"
+      }
+    }
+  },
+
+  "provenance_chain": [
+    {
+      "generation": 1,
+      "name": "Voxel models (MRI-derived)",
+      "years": "2003-2004",
+      "origin": "Japanese groups: National Institute of Informatics, Kitasato University, Keio University, Tokyo Metropolitan University",
+      "licence": "not stated on the Open3Dmodel pages for this generation",
+      "reference": "Nagaoaka et al. 2004, DOI 10.1088/0031-9155/49/1/001",
+      "note": "3D human voxel models for electromagnetic dosimetry, based on MRI of a 22-year-old male and female volunteer"
+    },
+    {
+      "generation": 2,
+      "name": "BodyParts3D",
+      "years": "2003-2008",
+      "origin": "Database Center for Life Science, Japan",
+      "licence": "Creative Commons Attribution-ShareAlike (CC BY-SA); the About page links the BY-SA 4.0 deed",
+      "structures": 382,
+      "download": "https://dbarchive.biosciencedbc.jp/en/bodyparts3d/download.html",
+      "reference": "Mitsuhashi N et al. 2008/2009, NAR vol 37, PMID 18835852",
+      "note": "Segmented into separate 3D models of 382 body parts"
+    },
+    {
+      "generation": 3,
+      "name": "Z-Anatomy",
+      "years": "around 2021",
+      "origin": "modified version of BodyParts3D",
+      "licence": "Creative Commons Attribution-ShareAlike (CC BY-SA); the About page links the BY-SA 4.0 deed",
+      "site": "https://www.z-anatomy.com/",
+      "reference": "Kervyn G. 2022, Acta Scientific Anatomy 1(4):13-15",
+      "modifications_from_predecessor": [
+        "structures added",
+        "meshes simplified / retopologized to reduce file size",
+        "vessels and nerves converted into curves",
+        "material properties and colours added",
+        "Python scripts added"
+      ]
+    },
+    {
+      "generation": 4,
+      "name": "Open3Dmodel",
+      "years": "2022-present",
+      "origin": "built on Z-Anatomy",
+      "licence": "Creative Commons Attribution-ShareAlike 4.0 (CC BY-SA 4.0) — see ambiguities above",
+      "modifications_from_predecessor": [
+        "all structures remeshed / retopologized to remove 'hooked' surface artefacts",
+        "each structure reviewed for anatomical correctness by one to three anatomists",
+        "estimated 70% of all shapes changed",
+        "muscles, tendons and aponeuroses added or adapted",
+        "some small muscles added",
+        "joint capsules, articular cartilages, bursae, synovial sheaths modelled",
+        "all blood vessels and nerves of the upper and lower limb newly modelled",
+        "textures applied"
+      ],
+      "anatomical_review_method": {
+        "reviewers_per_structure": "1 to 3 anatomists with expertise in the specific topic",
+        "reference_works_used": ["Moore's Clinically Oriented Anatomy", "Gray's Anatomy", "Netter's Atlas", "Prometheus Thieme Atlas", "Sobotta Atlas", "Pauchet and Dupret (1926)"],
+        "terminology": ["Terminologia Anatomica 1", "Terminologia Anatomica 2"],
+        "stated_caveat": "\"Despite our best efforts, some errors may still be present.\""
+      }
+    }
+  ],
+
+  "adjacent_but_separate_licence": {
+    "component": "web viewer",
+    "name": "open3dviewer",
+    "licence": "GNU General Public License v3",
+    "url": "https://github.com/djansma/open3dviewer",
+    "applies_to": "the viewer software only, not the model",
+    "note": "GPL3 on the viewer is a CODE licence. It does not apply to the anatomical model. Do not copy viewer source into Muscle Atlas without a GPL3 assessment — Muscle Atlas is not GPL3."
+  },
+
+  "available_downloads": {
+    "verified_from": "https://anatomytool.org/open3dmodel-create",
+    "host": "caskanatomy.info",
+    "directory_listing": "HTTP 403 — directory browsing disabled; files are reachable by direct link only",
+    "formats_offered": ["blender (.blend, zipped)", "obj (zipped)", "glb (zipped)"],
+    "packs": [
+      { "pack_id": "overview-skeleton", "name": "Overview skeleton", "formats": ["blender", "obj", "glb"], "stated_date": "June 2025", "muscle_relevant": false, "verified_size_mb": { "glb": 2.96 } },
+      { "pack_id": "vertebrae", "name": "Vertebrae", "formats": ["blender", "obj", "glb"], "stated_date": "June 2025", "muscle_relevant": false },
+      { "pack_id": "overview-colored-skull", "name": "Overview colored skull", "formats": ["blender", "obj", "glb"], "stated_date": "7 July 2025", "muscle_relevant": false },
+      { "pack_id": "exploded-view-skull", "name": "Exploded view skull", "formats": ["blender", "obj", "glb"], "stated_date": "7 July 2025", "muscle_relevant": false },
+      { "pack_id": "colored-skull-base", "name": "Colored skull base", "formats": ["blender", "obj", "glb"], "stated_date": "7 July 2025", "muscle_relevant": false },
+      { "pack_id": "upper-limb", "name": "Upper limb", "formats": ["blender", "obj", "glb"], "stated_date": "July 2025", "muscle_relevant": true, "verified_size_mb": { "blender": 28.59, "glb": 5.87 } },
+      { "pack_id": "lower-limb", "name": "Lower limb", "formats": ["blender", "obj", "glb"], "stated_date": "July 2025", "muscle_relevant": true, "verified_size_mb": { "blender": 25.89, "glb": 5.72 } },
+      { "pack_id": "hand", "name": "Hand", "formats": ["blender", "obj", "glb"], "stated_date": "July 2025", "muscle_relevant": true, "verified_size_mb": { "glb": 2.75 } },
+      { "pack_id": "subject", "name": "SUBJECT (skeleton)", "formats": ["blender", "obj", "glb"], "stated_date": "July 2025", "muscle_relevant": false }
+    ],
+    "no_pack_available_for": {
+      "finding": "There is NO downloadable thorax / abdomen / back muscle pack at the time of verification.",
+      "detail": "The project landing page lists \"Muscles of thorax, abdomen and back (March 2026)\" as a workstream item, not as a released, downloadable pack. The create page offers only upper-limb, lower-limb and hand among muscle-relevant packs.",
+      "consequence": "Muscle Atlas structures whose 3D counterpart would live in a thorax/abdomen/back pack cannot currently be sourced from an official download."
+    }
+  },
+
+  "inspected_artifacts": [
+    {
+      "pack_id": "upper-limb",
+      "url": "https://caskanatomy.info/open3dmodelfiles/upper-limb/upper-limb-glb.zip",
+      "downloaded": true,
+      "zip_sha256": "5AF0190A6D7BF47393447AC30021E4F3BA619721C7F3A620C39A895947078432",
+      "zip_bytes": 6160131,
+      "archive_contents": ["upper-limb.glb (6911588 bytes)"],
+      "archive_contained_licence_file": false,
+      "archive_contained_readme": false,
+      "gltf_version": "2.0",
+      "generator": "Khronos glTF Blender I/O v4.4.56",
+      "nodes": 575,
+      "meshes": 532,
+      "materials": 95,
+      "textures": 90,
+      "images": 84,
+      "approx_vertices": 760842,
+      "approx_triangles": 1368260,
+      "extensions_used": ["KHR_draco_mesh_compression", "KHR_materials_clearcoat", "KHR_materials_specular", "KHR_materials_ior"],
+      "extensions_required": ["KHR_draco_mesh_compression"],
+      "naming_convention_observed": "Terminologia Anatomica names, right side suffixed `.r` (e.g. \"Long head of biceps brachii.r\"), grouped into collections such as \"Arm - muscles\", \"Arm - bones\""
+    },
+    {
+      "pack_id": "lower-limb",
+      "url": "https://caskanatomy.info/open3dmodelfiles/lower-limb/lower-limb-glb.zip",
+      "downloaded": true,
+      "zip_sha256": "82AD6894BEC6E77BB2ABA970105F6EE7F0F694DE93494932EB634FD0150745C7",
+      "archive_contained_licence_file": false,
+      "gltf_version": "2.0",
+      "generator": "Khronos glTF Blender I/O v4.4.56",
+      "meshes": 472,
+      "materials": 68,
+      "textures": 63,
+      "approx_triangles": 1302531,
+      "extensions_required": ["KHR_draco_mesh_compression"],
+      "note": "Header-level inspection only; not extracted or retained. Inspecting was sufficient to confirm structure, naming and budget, and was deliberately done in a temporary directory."
+    }
+  ],
+
+  "muscle_atlas_coverage_check": {
+    "method": "Node-name substring search across the union of upper-limb and lower-limb node names",
+    "structures_with_3d_counterpart": [
+      "muscular.deltoid",
+      "muscular.pectoralis_major",
+      "muscular.serratus_anterior",
+      "muscular.biceps_brachii",
+      "muscular.rectus_femoris",
+      "muscular.vastus_lateralis",
+      "muscular.vastus_medialis",
+      "muscular.tibialis_anterior",
+      "muscular.trapezius",
+      "muscular.triceps_brachii",
+      "muscular.latissimus_dorsi",
+      "muscular.gluteus_maximus",
+      "muscular.gastrocnemius",
+      "muscular.soleus"
+    ],
+    "structures_without_3d_counterpart": [
+      "muscular.frontalis",
+      "muscular.sternocleidomastoid",
+      "muscular.rectus_abdominis",
+      "muscular.external_oblique",
+      "muscular.erector_spinae"
+    ],
+    "coverage": "14 of 19 structures have a candidate 3D counterpart; 5 do not.",
+    "false_positive_warning": "A naive substring search produces false positives. 'Oblique' matched only unrelated nodes (radio-ulnar syndesmosis, oblique ligament of the 1st finger, oblique head of adductor pollicis). 'Serratus' matched bursae as well as the muscle. Every mapping must be confirmed by a human against the actual node list, never by substring match alone."
+  },
+
+  "blocking_questions": [
+    {
+      "id": "Q1",
+      "question": "Is CC BY-SA 4.0 currently in force for the model, or is it the stated intent for a future release?",
+      "why_blocking": "The landing page uses future tense (\"will be licensed\"); the About page links the BY-SA 4.0 deed as though current.",
+      "who_can_answer": "the Open3Dmodel project, via https://anatomytool.org/open3dmodel-contact or the NAV (Nederlandse Anatomen Vereniging)",
+      "workaround": "none — this cannot be inferred"
+    },
+    {
+      "id": "Q2",
+      "question": "What is the exact licence instrument that ships with the downloadable GLB/OBJ/Blend files, given that the archives contain no licence file?",
+      "why_blocking": "CC BY-SA requires the licence to accompany the material. As shipped, it does not.",
+      "who_can_answer": "the Open3Dmodel project",
+      "workaround": "none"
+    },
+    {
+      "id": "Q3",
+      "question": "Is the project owner willing and able to distribute the model derivative under CC BY-SA 4.0 while keeping the application source under a more restrictive licence?",
+      "why_blocking": "If the answer is no, the integration must not ship in any form.",
+      "who_can_answer": "project owner / legal counsel",
+      "workaround": "none — but see proposed_alternatives in the integration doc"
+    }
+  ],
+
+  "integration_decision": {
+    "assets_downloaded_into_repository": false,
+    "assets_integrated_into_application": false,
+    "reason": "Instruction: \"Do not integrate any file before the source/license record is complete.\" Q1 and Q2 are unresolved, so the record is not complete. Committing a derived model under an unverified licence is the exact failure mode the integration brief was written to prevent.",
+    "what_was_built_instead": "The complete 3D integration architecture, mapping data derived from verified node names, validators, capability detection, offline model management, attribution presentation, and the full documentation set — with the model packs deliberately absent and every runtime path degrading honestly to the 2D board."
+  }
+}

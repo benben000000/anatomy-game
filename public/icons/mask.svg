@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Muscle Atlas">
+  <rect width="64" height="64" fill="#1f5f8b"/>
+  <g stroke="#ffffff" stroke-linecap="round" fill="none">
+    <path d="M19 25 L45 21" stroke-width="4"/>
+    <path d="M19 34 L45 34" stroke-width="3.6"/>
+    <path d="M19 43 L45 47" stroke-width="3.2"/>
+  </g>
+</svg>

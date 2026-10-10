@@ -1,0 +1,115 @@
+{
+  "$comment": "Mandatory attribution data for the Open3Dmodel project, captured verbatim from https://anatomytool.org/open3dmodel-credit on 2026-10-10. CC BY-SA 4.0 section 3(a)(1) requires reasonable identification of the author(s). For a model with this provenance, a reasonable reading is that this roster is reproduced in full rather than summarised. Do not shorten, merge, or drop entries without the project owner's explicit legal decision.",
+
+  "source_page": "https://anatomytool.org/open3dmodel-credit",
+  "captured_at": "2026-10-10",
+  "project": "Open 3D Anatomical Model for Education ('Open3Dmodel')",
+  "platform": "AnatomyTOOL (Leiden University Medical Center and Maastricht University)",
+  "supported_by": "Dutch Association of Anatomists (Nederlandse Anatomen Vereniging, NAV)",
+
+  "display_requirements": {
+    "must_show_in_app": true,
+    "minimum_presentation": [
+      "the project name and a link to it",
+      "the licence name and a link to the licence deed",
+      "a statement that the material has been modified, with a description of the modifications",
+      "this contributor roster, or a clearly linked location for it"
+    ],
+    "must_not": [
+      "describe the material as 'public domain' — it is not",
+      "describe it merely as 'open source' — attribution is required",
+      "state that it is unmodified — Muscle Atlas converts and optimises it",
+      "omit any contributor group"
+    ]
+  },
+
+  "contributors": {
+    "project_lead": [
+      { "name": "Paul (O.P.) Gobée, MD", "role": "anatomist, e-learning developer", "institution": "Leiden University Medical Center, dept. Anatomy & Embryology" }
+    ],
+
+    "project_support": [
+      { "name": "Prof. Marco (M.C.) DeRuiter, PhD", "role": "anatomist", "institution": "Leiden University Medical Center, dept. Anatomy & Embryology" }
+    ],
+
+    "core_team": [
+      { "name": "Paul (O.P.) Gobée, MD", "role": "anatomist, e-learning developer", "institution": "Leiden University Medical Center, dept. Anatomy & Embryology, Netherlands", "note": "general project management" },
+      { "name": "Daniël (D.) Jansma, MSc", "role": "anatomist, e-learning developer", "institution": "Leiden University Medical Center, dept. Anatomy & Embryology, Netherlands", "note": "general project management, web and 3D modelling consultation" },
+      { "name": "Eungyeol (E.) Lee, BFA, MSI", "role": "medical artist, 3D modeller", "institution": "Leiden University Medical Center, dept. Anatomy & Embryology, Netherlands", "note": "3D modelling consultation" },
+      { "name": "Matty (M.) Spinder, MD, MSI †", "role": "anatomist", "institution": "University Medical Center Utrecht, dept. Anatomy, Netherlands", "note": "general project management, 3D modelling consultation" }
+    ],
+
+    "anatomists": [
+      { "name": "Denise (D.M.J.) Arnold, MD", "role": "PhD student anatomy (2025)", "institution": "University of Toronto, Canada", "area": "upper limb" },
+      { "name": "Prof. Ronald (R.L.A.W.) Bleys, MD, PhD", "role": "anatomist", "institution": "University Medical Center Utrecht, dept. Anatomy, Netherlands", "area": "head" },
+      { "name": "Alexander (A.) Bijnsdorp, MD", "role": "dept. Anatomy & Neurosciences", "institution": "Amsterdam University Medical Center, location VUmc, Netherlands", "area": "spinal cord" },
+      { "name": "Paul (O.P.) Gobée, MD", "role": "anatomist, e-learning developer", "institution": "Leiden University Medical Center, dept. Anatomy & Embryology", "area": "abdomen, pelvis" },
+      { "name": "Andreas (A.) Herrler, apl. Prof., MSc (MHPE), PhD", "role": "anatomist", "institution": "University Maastricht, dept. Anatomy & Embryology, Netherlands", "area": "back, thorax" },
+      { "name": "Prof. Eleonore (S.E.) Köhler, PhD", "role": "anatomist", "institution": "University Maastricht, dept. Anatomy & Embryology, Netherlands" },
+      { "name": "Jan (J.) Kooloos, PhD", "role": "anatomist em.", "institution": "Radboud University Nijmegen, dept. Anatomy, Netherlands", "area": "upper limb, lower limb" },
+      { "name": "Prof. em. George (G.J.R.) Maat, MD, PhD", "role": "anatomist, forensic anthropologist", "institution": "Leiden University Medical Center, dept. Anatomy & Embryology, Netherlands", "area": "skeleton" },
+      { "name": "Flynn (F.) Post, MSc", "role": "PhD student anatomy (2025)", "institution": "University of Gent, Belgium", "area": "female pelvis" },
+      { "name": "Prof. Marco (M.C.) DeRuiter, PhD", "role": "anatomist", "institution": "Leiden University Medical Center, dept. Anatomy & Embryology", "area": "upper limb, pelvis" },
+      { "name": "Matty (M.) Spinder, MD, MSI †", "role": "anatomist", "institution": "University Medical Center Utrecht, dept. Anatomy, dept. Anatomy, Netherlands", "area": "skull, head and neck" },
+      { "name": "Prof. dr. Evie (E.) Vereecke, PhD", "role": "anatomist", "institution": "KU Leuven Campus Kulak, dept. of Development and Regeneration, Belgium", "area": "lower limb" },
+      { "name": "Marc A. T. M Vorstenbosch, PhD", "role": "anatomist, dept. of Anatomy", "institution": "Radboud University Medical Center Nijmegen, Netherlands", "area": "muscles of the head" },
+      { "name": "Prof. em. Koos-Jaap (K.J.) van Zwieten, PhD", "role": "anatomist", "institution": "Hasselt University, dept. of Anatomy, Belgium", "area": "lower limb" }
+    ],
+
+    "clinicians": [
+      { "name": "Ivar (I) Kommers, MD", "role": "neurosurgeon", "institution": "Amsterdam University Medical Center, location VUmc, Netherlands", "area": "spinal cord" },
+      { "name": "Edris (E.A.F.) Mahtab, MD PhD", "role": "cardiothoracic surgeon", "institution": "Leiden University Medical Center, dept. of Cardiothoracic Surgery", "area": "lungs" }
+    ],
+
+    "modellers": [
+      { "name": "Eungyeol (E.) Lee, BFA, MSI", "role": "medical artist, 3D modeller", "institution": "Leiden University Medical Center, dept. Anatomy & Embryology", "note": "complete body modelling except head" },
+      { "name": "Emily (E.) Fong, MSc, BDes (Arch)", "role": "medical artist, 3D modeller", "institution": "Australia", "note": "head modelling" }
+    ],
+
+    "contributing_modellers": [
+      { "name": "Emily (E.C.A.) Lowes, MSc", "role": "medical artist, 3D modeller", "institution": "UK", "note": "initial lower limb modelling" },
+      { "name": "Greet (G.) Mommen", "role": "medical artist, 3D modeller", "institution": "University Maastricht, Netherlands", "note": "vertebral column modelling" },
+      { "name": "Mieke (M.) Roth, MSc", "role": "3D modeller", "institution": "Netherlands", "note": "consultant 3D modelling" },
+      { "name": "Matty (M.) Spinder, MD, MSI †", "role": "anatomist", "institution": "University Medical Center Utrecht, dept. Anatomy, Netherlands", "note": "general 3D modelling support" }
+    ],
+
+    "web_viewer_programming": [
+      { "name": "Daniël (D.) Jansma, MSc", "role": "anatomist, e-learning developer", "institution": "Leiden University Medical Center, dept. Anatomy & Embryology, Netherlands", "note": "web viewer development, web models" }
+    ],
+
+    "further_contributors": [
+      { "name": "Johnny (J.) Albadeen", "role": "medical student", "institution": "Leiden University Medical Center", "note": "initial project support" },
+      { "name": "Frederick (F.) Michels, MD, PhD", "role": "orthopedic surgeon", "institution": "Academic Hospital Groeninge, Kortrijk, Belgium", "note": "consultant foot and ankle anatomy" },
+      { "name": "Pip (P.) Oostwoud", "role": "medical student", "institution": "Leiden University Medical Center", "note": "survey analysis and reporting" }
+    ]
+  },
+
+  "provenance_chain_attribution": {
+    "$comment": "Because Open3Dmodel is a derivative of CC BY-SA works, the attribution obligation extends upstream. Each generation must be credited.",
+    "generations": [
+      { "name": "BodyParts3D", "licence": "CC BY-SA (per project About page, linking BY-SA 4.0)", "reference": "Mitsuhashi N et al. 2008/2009. BodyParts3D — 3D structure database for anatomical concepts. Nucleic Acids Research 37. PMID 18835852", "url": "https://lifesciencedb.jp/bp3d/" },
+      { "name": "Z-Anatomy", "licence": "CC BY-SA (per project About page, linking BY-SA 4.0)", "reference": "Kervyn G. 2022. The First Open Source 3D Atlas of Human Anatomy. Acta Scientific Anatomy 1(4):13-15", "url": "https://www.z-anatomy.com/" },
+      { "name": "Voxel source data", "reference": "Nagaooka et al. 2004. Development of realistic high-resolution whole-body voxel models of Japanese adult males and females... DOI 10.1088/0031-9155/49/1/001" }
+    ]
+  },
+
+  "anatomical_references_cited_by_the_project": [
+    "Moore's Clinically Oriented Anatomy, 7th and 8th editions",
+    "Gray's Anatomy, 40th and 41st editions",
+    "Netter's Atlas of Human Anatomy",
+    "Prometheus Thieme Atlas of Anatomy, 1st edition",
+    "Sobotta Atlas of Human Anatomy, 15th edition",
+    "Pauchet and Dupret, L'Anatomie en Poche, 1926",
+    "Terminologia Anatomica 1, FCAT, IFAA, Thieme, 1998",
+    "Terminologia Anatomica 2, https://ta2viewer.openanatomy.org/"
+  ],
+
+  "medical_caveats_from_the_source_project": [
+    "The model depicts 'canonical' adult anatomy — an idealised reference, not an individual.",
+    "The underlying subject was a 22-year-old volunteer, so epiphysial disks and fusion lines are not fully closed. The project deliberately left these visible but shallow.",
+    "The project states: \"Despite our best efforts, some errors may still be present.\"",
+    "Anatomy varies between individuals; depicted sizes and configurations are not universal."
+  ],
+
+  "muscle_atlas_disclaimer_addition": "Muscle Atlas does not endorse or certify this model. It is incorporated as a licensed third-party asset. Its own anatomy review is the responsibility of the Open3Dmodel project, recorded above."
+}

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!--
+      viewport-fit=cover lets the app draw under the iPad safe areas.
+      Browser zoom is deliberately NOT disabled: there is no maximum-scale,
+      minimum-scale, or user-scalable=no. Zooming the page must stay available
+      to every learner. The anatomy board implements its own two-pointer
+      pinch-to-zoom within its own bounds.
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#0f1115" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f7f7f5" media="(prefers-color-scheme: light)" />
+    <meta
+      name="description"
+      content="Muscle Atlas — practice locating major muscles through interactive anatomy. Works offline once downloaded."
+    />
+
+    <!-- iPad Home Screen web-app behaviour. Retained alongside the manifest
+         because installed web apps on some iPadOS versions still read these. -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Muscle Atlas" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" href="/icons/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/icons/icon-180.png" />
+    <link rel="mask-icon" href="/icons/mask.svg" color="#1f5f8b" />
+
+    <title>Muscle Atlas</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      <p style="font-family: system-ui, sans-serif; padding: 2rem; max-width: 40rem">
+        Muscle Atlas is an interactive study tool and needs JavaScript enabled. It teaches the
+        muscular system by visual identification and does not provide diagnosis or treatment
+        advice.
+      </p>
+    </noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

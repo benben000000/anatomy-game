@@ -1,0 +1,53 @@
+/**
+ * Motion.
+ *
+ * Only `transform` and `opacity` are animated. No layout-triggering properties,
+ * no filter animation, no animated blur. Viewport animation is suppressed
+ * entirely when the learner has asked for reduced motion — the OS setting is a
+ * hard floor that the in-app preference cannot override upward.
+ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Applied to the document root when reduced motion is active, whether it came
+   from the OS or from app settings. Keeps the CSS path equivalent for cases
+   where the media query is unavailable. */
+[data-reduced-motion='true'] .board__viewport-animated {
+  transition: none !important;
+}
+
+[data-reduced-motion='true'] *,
+[data-reduced-motion='true'] *::before,
+[data-reduced-motion='true'] *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+}
+
+[data-reduced-motion='true'] .skip-link {
+  transition: none;
+}
+
+.board__viewport-animated {
+  transition:
+    transform var(--motion-viewport) var(--easing-standard);
+  will-change: transform;
+}
+
+/* Non-essential animation must stop when the document is hidden. */
+@media (prefers-reduced-motion: reduce) {
+  .board__placeholder-bar::after {
+    animation: none;
+    width: 100%;
+    opacity: 0.5;
+  }
+}
